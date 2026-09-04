@@ -1,7 +1,8 @@
 # Kammy — product demo
 
 **Client:** Kammy — Team Shark Bait, IFG × Tetr Global Business Challenge 2026
-**Live URL:** <!-- PENDIENTE: pegar la URL de Vercel cuando termine el deploy -->
+**Live URL:** https://kammy-demo.vercel.app
+**Repo:** https://github.com/Pab-M24/kammy-demo
 
 ---
 
@@ -104,9 +105,8 @@ One shared state object drives every section:
 - [ ] **Navbar wordmark → client logo.** `index.html`, marked with a comment beside the
       `KAMMY` wordmark. If `.jpg` use `mix-blend-mode: multiply`; if `.png` use
       `object-fit: contain`; `max-width: 140px`; never distort.
-- [ ] **FX date.** `index.html`, in the line under the catalogue grid: replace the
-      placeholder with the date of the pitch.
-- [ ] **Vercel URL.** Paste at the top of this file once deployed.
+- [x] ~~**FX date.**~~ Set to 4 September 2026 in the line under the catalogue grid.
+- [x] ~~**Vercel URL.**~~ https://kammy-demo.vercel.app
 
 ## One data note for the team
 
