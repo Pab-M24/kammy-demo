@@ -473,9 +473,10 @@ button{font:inherit;color:inherit}
   .nav__links{
     position:fixed;inset:64px 0 0;margin:0;flex-direction:column;gap:0;
     background:var(--bg);border-top:1px solid var(--rule);padding:16px 24px;
-    transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;
+    transform:translateY(-8px);opacity:0;pointer-events:none;visibility:hidden;
+    transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s;
   }
-  .nav__links.is-open{opacity:1;transform:none;pointer-events:auto}
+  .nav__links.is-open{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition-delay:0s}
   .nav__links a{padding:18px 0;font-size:18px;border-bottom:1px solid var(--rule);color:var(--fg)}
   .nav .market__btn{padding:7px 9px;font-size:12px}
   .nav__inner{gap:10px}
