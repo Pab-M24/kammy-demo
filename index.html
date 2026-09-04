@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kammy — Instalments for live-event tickets</title>
+<meta name="description" content="Kammy splits a live-event ticket into instalments the fan can time. The organizer is paid 100% upfront, the same day, by a licensed lending partner. Product demo — Mexico and India.">
+<meta property="og:title" content="Kammy — They have the money. Just not on the 27th.">
+<meta property="og:description" content="Kammy splits a live-event ticket into instalments the fan can time. The organizer is paid 100% upfront by a licensed lending partner. Mexico and India.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#08202E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M2%207H30V13A3%203%200%200%200%2030%2019V25H2V19A3%203%200%200%200%202%2013Z'%20fill='%230E7C6E'/%3E%3Cpath%20d='M21%208V24'%20stroke='%23F4F8F8'%20stroke-width='1.5'%20stroke-dasharray='2%203'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<a class="skip" href="#hero">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="wordmark" href="#top" aria-label="Kammy — home">KAMMY</a>
+    <!-- PENDIENTE: replace typographic wordmark with client logo. If .jpg use mix-blend-mode: multiply; if .png use object-fit: contain; max-width 140px; never distort -->
+
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#events">Events</a>
+      <a href="#preapproval">Get pre-approved</a>
+      <a href="#simulator">Onsale simulator</a>
+      <a href="#model">The model</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+
+    <div class="nav__actions">
+      <div class="market" role="group" aria-label="Market" data-market-toggle>
+        <button type="button" class="market__btn" data-market="MX" aria-pressed="true">Mexico</button>
+        <button type="button" class="market__btn" data-market="IN" aria-pressed="false">India</button>
+      </div>
+
+      <button type="button" class="icon-btn" id="theme-btn" aria-label="Switch colour theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="8" cy="8" r="5.5"></circle>
+          <path d="M8 2.5a5.5 5.5 0 0 1 0 11z" fill="currentColor" stroke="none"></path>
+        </svg>
+      </button>
+
+      <button type="button" class="icon-btn nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M2 4h12M2 8h12M2 12h12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__grid wrap">
+    <div class="hero__left reveal">
+      <h1 class="hero__h1">They have the money.<br>Just not on the 27th.</h1>
+      <p class="hero__sub">Kammy splits a live-event ticket into instalments the fan can time. The organizer is paid 100% upfront, the same day, by a licensed lending partner.</p>
+      <p class="micro">$0 Kammy fee — your lending partner sets the terms.</p>
+      <div class="hero__cta">
+        <a class="btn btn--fill" href="#preapproval">Run a soft check</a>
+        <a class="btn btn--line" href="#simulator">Watch the onsale race</a>
+      </div>
+    </div>
+
+    <div class="hero__right reveal">
+      <div class="ticket" id="hero-ticket">
+        <div class="ticket__top">
+          <p class="ticket__event" id="hero-event"></p>
+          <p class="ticket__price mono" id="hero-price"></p>
+          <p class="ticket__alt mono" id="hero-alt"></p>
+        </div>
+
+        <div class="perf perf--notch" aria-hidden="true"></div>
+
+        <div class="ticket__bottom">
+          <div class="seg" role="group" aria-label="Instalment term in months">
+            <button type="button" class="seg__btn" data-term="3" aria-pressed="false">3</button>
+            <button type="button" class="seg__btn" data-term="6" aria-pressed="true">6</button>
+            <button type="button" class="seg__btn" data-term="9" aria-pressed="false">9</button>
+            <span class="seg__unit">months</span>
+          </div>
+
+          <div class="chips" id="hero-chips"></div>
+          <p class="ticket__summary mono" id="hero-summary"></p>
+          <p class="ticket__note" id="hero-note"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="perf perf--notch" aria-hidden="true"></div></div>
+
+<!-- ============ 2. HOW THE MONEY MOVES ============ -->
+<section class="how" id="how">
+  <div class="wrap">
+    <h2 class="h2 reveal">How the money moves</h2>
+
+    <ol class="rail reveal">
+      <li class="rail__step">
+        <span class="rail__num mono">01</span>
+        <p class="rail__body">Fan picks a ticket and runs a soft check. Seconds, no impact on their credit score.</p>
+      </li>
+      <li class="rail__step rail__step--wide rail__step--teal">
+        <span class="rail__num mono">02</span>
+        <p class="rail__body">The licensed partner underwrites and pays the organizer 100%, upfront, today.</p>
+        <p class="rail__foot">SOFOM in Mexico · NBFC in India</p>
+      </li>
+      <li class="rail__step">
+        <span class="rail__num mono">03</span>
+        <p class="rail__body">The fan repays the lending partner over 3, 6 or 9 months. Kammy is not the creditor.</p>
+      </li>
+      <li class="rail__step">
+        <span class="rail__num mono">04</span>
+        <p class="rail__body">Kammy earns 4% from the organizer and 5% from the lender. The fan pays Kammy $0.</p>
+      </li>
+    </ol>
+
+    <p class="fine reveal">Kammy never lends and never holds funds. No balance sheet, no credit risk, no float.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="perf perf--notch" aria-hidden="true"></div></div>
+
+<!-- ============ 3 + 5. EVENT CATALOGUE ============ -->
+<section class="events" id="events">
+  <div class="wrap">
+    <div class="events__head reveal">
+      <div>
+        <h2 class="h2">Two markets. Real prices.</h2>
+        <p class="sub">Mexico and India. Nothing else, yet.</p>
+      </div>
+      <div class="market market--lg" role="group" aria-label="Market" data-market-toggle>
+        <button type="button" class="market__btn" data-market="MX" aria-pressed="true">Mexico</button>
+        <button type="button" class="market__btn" data-market="IN" aria-pressed="false">India</button>
+      </div>
+    </div>
+
+    <div class="cards" id="cards"></div>
+
+    <p class="fine reveal">Venues are real. Artists and dates are illustrative. FX as of <!-- PENDIENTE: fecha del pitch -->the date of the pitch.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="perf perf--notch" aria-hidden="true"></div></div>
+
+<!-- ============ 4. PRE-APPROVAL ============ -->
+<section class="pre" id="preapproval">
+  <div class="wrap pre__grid">
+    <div class="pre__left reveal">
+      <h2 class="h2">The partner decides.<br>Not us.</h2>
+      <ul class="ticks">
+        <li>Soft check only.</li>
+        <li>No impact on your credit score.</li>
+        <li>Limit set by the licensed lender.</li>
+      </ul>
+      <p class="fine" id="pre-partner-note"></p>
+    </div>
+
+    <div class="pre__right reveal">
+      <div class="panel" id="pre-panel">
+
+        <form class="form" id="pre-form" novalidate>
+          <div class="field">
+            <label for="f-name">First name</label>
+            <input id="f-name" name="name" type="text" autocomplete="off" placeholder="Ana" required>
+          </div>
+          <div class="field">
+            <label for="f-income" id="f-income-label">Monthly income</label>
+            <input id="f-income" name="income" type="number" inputmode="numeric" min="0" step="100" class="mono" placeholder="18000" required>
+          </div>
+          <div class="field">
+            <label for="f-emp">Employment type</label>
+            <select id="f-emp" name="employment">
+              <option>Salaried</option>
+              <option>Self-employed</option>
+              <option>Gig</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--fill btn--block">Run soft check</button>
+          <p class="fine">Nothing is submitted anywhere. This demo keeps your input in the browser only.</p>
+        </form>
+
+        <div class="status" id="pre-status" aria-live="polite" hidden>
+          <div class="bar" aria-hidden="true"><span></span></div>
+          <p class="status__line" id="pre-status-line"></p>
+        </div>
+
+        <div class="result" id="pre-result" hidden>
+          <p class="result__ok">Approved by your licensed lending partner</p>
+          <p class="result__limit mono" id="pre-limit"></p>
+          <p class="result__alt mono" id="pre-limit-alt"></p>
+          <p class="result__partner" id="pre-partner"></p>
+          <div class="perf" aria-hidden="true"></div>
+          <p class="fine">Terms, rate and schedule are set by your lending partner. Kammy's fee to you is $0.</p>
+          <button type="button" class="btn btn--line btn--sm" id="pre-reset">Run it again</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. ONSALE SIMULATOR ============ -->
+<section class="sim" id="simulator">
+  <div class="wrap">
+    <div class="sim__head reveal">
+      <h2 class="h2 h2--inv">Same onsale. Same clock.</h2>
+      <p class="sub sub--inv">Tickets don't sell out because fans are broke. They sell out because checkout is slow.</p>
+    </div>
+
+    <p class="sim__clock mono" id="sim-clock">00.0</p>
+
+    <div class="sim__controls">
+      <button type="button" class="btn btn--fill" id="sim-start">Start the onsale</button>
+      <button type="button" class="btn btn--line btn--inv" id="sim-reset">Reset</button>
+    </div>
+
+    <div class="sim__panels">
+      <div class="sim__panel sim__panel--trad" id="sim-trad">
+        <h3 class="sim__title">Traditional checkout</h3>
+        <ol class="log" id="log-trad" aria-live="polite" aria-label="Traditional checkout log"></ol>
+      </div>
+
+      <div class="perf perf--v" aria-hidden="true"></div>
+
+      <div class="sim__panel sim__panel--kammy" id="sim-kammy">
+        <h3 class="sim__title">With Kammy</h3>
+        <ol class="log" id="log-kammy" aria-live="polite" aria-label="Kammy checkout log"></ol>
+        <p class="sim__dead mono" id="sim-dead" hidden></p>
+      </div>
+    </div>
+
+    <p class="sim__summary" id="sim-summary" hidden>35 seconds of dead time. That's the gap Kammy closes.</p>
+    <p class="fine fine--inv">Illustrative timing based on a typical card checkout with 3-D Secure step-up authentication.</p>
+  </div>
+</section>
+
+<!-- ============ 8. THE MODEL ============ -->
+<section class="model" id="model">
+  <div class="wrap model__grid">
+    <div class="reveal">
+      <h2 class="h2">The model</h2>
+      <dl class="strip">
+        <div class="strip__row"><dt>Average ticket</dt><span class="leader" aria-hidden="true"></span><dd class="mono">$215.00</dd></div>
+        <div class="strip__row"><dt>Organizer fee (4.0%)</dt><span class="leader" aria-hidden="true"></span><dd class="mono">$8.60</dd></div>
+        <div class="strip__row"><dt>Lender commission (5.0%)</dt><span class="leader" aria-hidden="true"></span><dd class="mono">$10.75</dd></div>
+        <div class="strip__row strip__row--key"><dt>Revenue per transaction</dt><span class="leader" aria-hidden="true"></span><dd class="mono">$19.35</dd></div>
+        <div class="strip__row"><dt>Variable cost</dt><span class="leader" aria-hidden="true"></span><dd class="mono">$3.55</dd></div>
+        <div class="strip__row strip__row--key"><dt>Contribution</dt><span class="leader" aria-hidden="true"></span><dd class="mono">$15.80</dd></div>
+        <div class="strip__row strip__row--key"><dt>Contribution margin</dt><span class="leader" aria-hidden="true"></span><dd class="mono">81.7%</dd></div>
+      </dl>
+      <p class="model__close">Kammy is paid by the organizer and the lender. Never by the fan.</p>
+    </div>
+
+    <aside class="take reveal">
+      <p class="take__num">9%</p>
+      <p class="take__cap">total take rate. Zero lending capital.</p>
+    </aside>
+  </div>
+</section>
+
+<div class="wrap"><div class="perf perf--notch" aria-hidden="true"></div></div>
+
+<!-- ============ 9. WHERE THIS GOES ============ -->
+<section class="road" id="roadmap">
+  <div class="wrap">
+    <h2 class="h2 h2--big reveal">Two launch markets.<br>Built to travel.</h2>
+    <p class="sub sub--wide reveal">Kammy carries no lending capital, so a new country is one licensed partner and one currency — not a balance sheet.</p>
+
+    <ol class="rail rail--road reveal">
+      <li class="rail__step rail__step--wide rail__step--teal">
+        <span class="rail__num mono">PHASE 1 — LIVE</span>
+        <p class="rail__body">Mexico · India</p>
+        <p class="rail__foot">Licensed SOFOM · Licensed NBFC</p>
+        <p class="rail__quote">Where the $85K validation round is deployed.</p>
+      </li>
+      <li class="rail__step rail__step--future">
+        <span class="rail__num mono">PHASE 2 — NEXT</span>
+        <p class="rail__body">Colombia · Chile · Peru · Indonesia · Philippines</p>
+        <p class="rail__quote">Each market gated on one licensed lending partner. No partner, no launch.</p>
+      </li>
+      <li class="rail__step rail__step--future">
+        <span class="rail__num mono">PHASE 3 — LATER</span>
+        <p class="rail__quote">Markets with high live-event demand, low credit-card penetration and an established non-bank lending framework.</p>
+      </li>
+    </ol>
+
+    <p class="fine reveal">Phases 2 and 3 are roadmap. Kammy operates in Mexico and India only.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="wordmark wordmark--foot">KAMMY</p>
+      <p class="foot__markets">Mexico · India</p>
+    </div>
+    <p class="foot__legal">Demo built for the IFG × Tetr Global Business Challenge 2026 by Team Shark Bait. This is a product demonstration, not a live financial service. No credit is offered, no application is processed, and no funds move. Lending would be performed by licensed partners — a SOFOM in Mexico and an NBFC in India. All figures, partners and events shown are illustrative.</p>
+  </div>
+</footer>
+
+<!-- ============ 6. PURCHASE MODAL ============ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal__x icon-btn" data-close aria-label="Close">
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"></path></svg>
+    </button>
+
+    <div class="modal__step" id="step-confirm">
+      <p class="modal__kicker">Confirm your instalments</p>
+      <h3 class="modal__title" id="modal-title"></h3>
+      <p class="modal__venue" id="modal-venue"></p>
+
+      <div class="modal__pricerow">
+        <span class="modal__price mono" id="modal-price"></span>
+        <span class="modal__price-alt mono" id="modal-price-alt"></span>
+      </div>
+
+      <div class="seg" role="group" aria-label="Instalment term in months">
+        <button type="button" class="seg__btn" data-mterm="3" aria-pressed="false">3</button>
+        <button type="button" class="seg__btn" data-mterm="6" aria-pressed="true">6</button>
+        <button type="button" class="seg__btn" data-mterm="9" aria-pressed="false">9</button>
+        <span class="seg__unit">months</span>
+      </div>
+
+      <p class="modal__inst mono" id="modal-inst"></p>
+      <div class="perf" aria-hidden="true"></div>
+      <p class="modal__line" id="modal-line"></p>
+      <button type="button" class="btn btn--fill btn--block" id="modal-confirm">Confirm — one tap</button>
+    </div>
+
+    <div class="modal__step" id="step-processing" hidden aria-live="polite">
+      <div class="bar" aria-hidden="true"><span></span></div>
+      <p class="status__line">Routing to your lending partner…</p>
+    </div>
+
+    <div class="modal__step" id="step-done" hidden>
+      <p class="modal__secured">Seat secured. Organizer paid in full.</p>
+      <p class="modal__venue" id="done-event"></p>
+      <div class="sched" id="sched"></div>
+      <p class="fine">Repayments are collected by the licensed lending partner. Kammy never holds your money.</p>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--line btn--sm" data-close>Close</button>
+        <button type="button" class="btn btn--fill btn--sm" id="modal-to-sim">See how this beats the queue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
