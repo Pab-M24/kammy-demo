@@ -309,7 +309,7 @@ button{font:inherit;color:inherit}
 
 .result__ok{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .result__limit{font-size:clamp(48px,6.4vw,72px);font-weight:500;line-height:1.02;margin-top:14px;letter-spacing:-.035em}
-.result__cur{font-size:.3em;font-weight:400;letter-spacing:.06em;color:var(--muted);margin-left:.45em;vertical-align:.75em}
+.result__cur{font-size:.3em;font-weight:400;letter-spacing:.06em;color:var(--muted);margin-left:.15em;vertical-align:.75em}
 .result__alt{font-size:14px;color:var(--muted);margin-top:4px}
 .result__partner{font-size:13px;margin-top:16px;margin-bottom:20px;color:var(--fg)}
 .result .fine{margin-top:18px}

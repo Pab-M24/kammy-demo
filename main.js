@@ -334,7 +334,7 @@
     $('#f-income').placeholder = m.incomeHint;
     $('#pre-partner').textContent = m.partner;
     $('#pre-limit').innerHTML = formatMoney(m.limit, m.currency) +
-      (m.currency === 'INR' ? '' : '<span class="result__cur">' + m.currency + '</span>');
+      (m.currency === 'INR' ? '' : ' <span class="result__cur">' + m.currency + '</span>');
     $('#pre-limit-alt').textContent = formatMoney(m.limitUSD, 'USD', 0) + ' USD';
   }
 
